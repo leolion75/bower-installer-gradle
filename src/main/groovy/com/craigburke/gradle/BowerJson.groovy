@@ -15,7 +15,9 @@ class BowerJson {
     
     static JsonBuilder generateBasic(BowerModuleExtension bowerConfig) {
         Map bowerJson = [ name: DEFAULT_APP_NAME, dependencies: getDependenciesMap(bowerConfig.dependencies) ]
-        
+        if (bowerConfig.resolutions) {
+            bowerJson.resolutions = bowerConfig.resolutions
+        }
         def json = new JsonBuilder()
         json(bowerJson)
         json

@@ -4,6 +4,7 @@ class BowerModuleExtension {
 
     String installBase
     Map additional = [:]
+    Map resolutions = [:]
 
     private DependencyBuilder builder = new DependencyBuilder()
 
